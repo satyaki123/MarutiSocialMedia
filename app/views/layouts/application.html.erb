@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RelianceMutualSocialMediaAnalytics</title>
+  <%= stylesheet_link_tag   'font-awesome','bootstrap.min','font-awesome.min'  %>
+  <%= javascript_include_tag 'jquery', 'jquery_ujs','jquery.dataTables.min'%>
+  <%= yield :header%>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-3 col-md-2 sidebar">
+				</div>
+				<div class="reliance col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+					<%= yield %>
+				</div>
+			</div>
+
+		</div>
+</body>
+</html>

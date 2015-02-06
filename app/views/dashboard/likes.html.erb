@@ -1,0 +1,32 @@
+<%= content_for :header do %>
+<%= javascript_include_tag "dataTables.bootstrap","posts" %>
+<%end%>
+	
+	
+<div class="table-responsive">
+	<h2 class="page-header">Facebook Like History</h2>
+	<div style="float:right"><%=link_to "Home",root_path,html_options = {:class => "btn btn-primary"}%></div>
+	<br>
+	<br>
+	<table class="table table-striped table-bordered" id="posts_table">
+		<thead>
+			<tr>
+				<th>Liked By</th>
+				<th>Profile Link</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% unless @likes.nil?%>
+	         <%@likes.each do |i|%>
+			<tr>
+				<td><%=i.raw_attributes[:name]%></td></td>
+				<%profile_id = i.raw_attributes[:id]%>
+				<%url="https://www.facebook.com/"%>
+				<%url << profile_id%>
+				<td><a href=<%=url%> target ="_blank"><%=url%></td>
+			</tr>
+			<% end %>
+			<% end %>
+		</tbody>
+	</table>
+</div>

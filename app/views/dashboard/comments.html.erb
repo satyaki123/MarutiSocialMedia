@@ -1,0 +1,36 @@
+<%= content_for :header do %>
+<%= javascript_include_tag "dataTables.bootstrap","posts" %>
+<%end%>
+	
+	
+<div class="table-responsive">
+	<h2 class="page-header">Comment History</h2>
+    <div style="float:right"><%=link_to "Home",root_path,html_options = {:class => "btn btn-primary"}%></div>
+    <br>
+    <br>
+	<table class="table table-striped table-bordered" id="posts_table">
+		<thead>
+			<tr>
+				<th>Commented By</th>
+				<th>Comment</th>
+				<th>Profile Link</th>
+				<th>Total Likes</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% unless @comments.nil?%>
+	         <%@comments.each do |i|%>
+			<tr>
+				<td><%=i.raw_attributes[:from][:name]%></td>
+				<td><%=i.raw_attributes[:message]%>
+				<%profile_id = i.raw_attributes[:from][:id]%>
+				<%url="https://www.facebook.com/"%>
+				<%url << profile_id%>
+				<td><a href=<%=url%> target = "_blank"><%=url%></td>
+				<td><%=i.raw_attributes[:like_count]%></td>
+			</tr>
+			<% end %>
+			<% end %>
+		</tbody>
+	</table>
+</div>

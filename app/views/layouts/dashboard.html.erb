@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RelianceMutualSocialMediaAnalytics</title>
+  <%= stylesheet_link_tag   'font-awesome','bootstrap.min','font-awesome.min','dashboard','dataTables.bootstrap'  %>
+  <%= javascript_include_tag 'jquery', 'jquery_ujs','jquery.dataTables.min','http://code.highcharts.com/highcharts.js'%>
+  <%= yield :header%>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-3 col-md-2 sidebar">
+				</div>
+				<div class="reliance col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+					<div id="wrapper">
+						<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<div id="logo" style="padding-left: 10px;margin-top: 10px">
+			<%= link_to image_tag("reliance_mutual_fund_logo.png"), root_path %>
+			</div>
+		</div>
+		<!-- Top Menu Items -->
+		<ul class="nav navbar-right top-nav">
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Dhamesh <b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<li>
+						<a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+		<div class="collapse navbar-collapse navbar-ex1-collapse">
+			<ul class="nav navbar-nav side-nav">
+				<li class="active">
+					<a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Social Media</a>
+				</li>
+				<li class="<%= @app_store_class %>">
+					<a href="charts.html"><i class="fa fa-mobile fa-1.5x"></i> App Store</a>
+				</li>
+				<li class="<%= @website_class %>">
+					<a href="tables.html"><i class="fa fa-laptop"></i> Website</a>
+				</li>
+				<li>
+					<a href="forms.html"><i class="fa fa-fw fa-edit"></i> Manage & Publish</a>
+				</li>
+				<li>
+					<a href="bootstrap-elements.html"><i class="fa fa-bar-chart"></i>Charts & Graphs</a>
+				</li>
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</nav>
+	<div id="page-wrapper">
+		<div class="container-fluid">
+			<%=yield%>
+		</div>
+		</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+</body>
+</html>
