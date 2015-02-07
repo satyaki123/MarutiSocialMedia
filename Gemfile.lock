@@ -60,7 +60,6 @@ GEM
     mime-types (2.4.3)
     minitest (5.5.1)
     multi_json (1.10.1)
-    mysql2 (0.3.17)
     rack (1.5.2)
     rack-oauth2 (1.0.10)
       activesupport (>= 2.3)
@@ -132,7 +131,6 @@ DEPENDENCIES
   fb_graph
   jbuilder (~> 2.0)
   jquery-rails
-  mysql2
   rails (= 4.1.7)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

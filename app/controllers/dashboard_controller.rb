@@ -12,7 +12,7 @@ class DashboardController < ApplicationController
   def fb_posts
     @posts = @@page.posts
   end
-  
+
   def likes
     post_identifier =  params[:postidentifier]
     posts = @@page.posts
