@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   get  'dashboard/fb_posts'
   get 'dashboard/likes'
   get 'dashboard/comments'
-  # The priority is based upon order of creation: first created -> highest priority.
+  get 'dashboard/tweet_details'
+  get 'dashboard/tweet_text'
+    # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
