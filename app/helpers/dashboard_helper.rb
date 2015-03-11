@@ -27,6 +27,9 @@ def retweets(tweet_id)
    obj2=$client.status(tweet_id)
    obj2.retweet_count
 end
+def follower_details(follower)
+   [follower.id,follower.screen_name]
+end
 
 end
 

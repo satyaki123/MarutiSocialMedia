@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'dashboard/comments'
   get 'dashboard/tweet_details'
   get 'dashboard/tweet_text'
+  get 'dashboard/followers_twitter'
     # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
