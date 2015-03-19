@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
   layout 'dashboard'
-  @@page = FbGraph::Page.fetch('249343554283',:access_token => "661208107330805|5IrEoXCReFDFSxeB1j9Zju_XNOI")
+  @@page = FbGraph::Page.fetch('113866005332897',:access_token => "661208107330805|5IrEoXCReFDFSxeB1j9Zju_XNOI")
   def index
     @total_likes = @@page.raw_attributes[:likes]
     @@page_id = @@page.identifier
@@ -28,7 +28,7 @@ class DashboardController < ApplicationController
   end
 
   def comments
-    @@page = FbGraph::Page.fetch('249343554283',:access_token => "661208107330805|5IrEoXCReFDFSxeB1j9Zju_XNOI")
+    @@page = FbGraph::Page.fetch('113866005332897',:access_token => "661208107330805|5IrEoXCReFDFSxeB1j9Zju_XNOI")
     post_identifier =  params[:postidentifier]
     posts = @@page.posts
     posts.each do |i|
@@ -57,7 +57,7 @@ class DashboardController < ApplicationController
 
   def tweet_details
     begin
-      @count = $client.get_all_tweets("Reliance_MF").count
+      @count = $client.get_all_tweets("Maruti_Corp").count
     rescue Exception => e
       render plain: "Please try Again after some time"
     end
@@ -65,14 +65,14 @@ class DashboardController < ApplicationController
 
   def tweet_text
     begin
-      @ids = $client.get_all_tweets("Reliance_MF").take(10)
+      @ids = $client.get_all_tweets("Maruti_Corp").take(10)
     rescue Exception => e
       render plain: "Please try Again after some time"
     end
   end
 
   def followers_twitter
-    @obj3=$client.followers("Reliance_MF").take(10)
+    @obj3=$client.followers("Maruti_Corp").take(10)
   end
 
 end
